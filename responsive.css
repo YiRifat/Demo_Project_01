@@ -532,7 +532,7 @@
 }
 
 /*todo xxs */
-@media (max-width: 475px){
+@media (max-width: 375px){
     .container{
         padding: 0 5rem;
     }
@@ -558,7 +558,7 @@
         text-align: center;
     }
     .section06{
-        height: 70rem;
+        height: 85rem;
     }
     .section06 .container{
         padding-top: 2rem;
