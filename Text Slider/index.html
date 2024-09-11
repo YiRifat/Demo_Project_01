@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Slider</title>
+    <link rel="stylesheet" href="slider.css">
+</head>
+<body>
+    <div class="slider">
+        <div class="slider-container">
+            <div class="slide active">Slide 1: Here's the First slide.</div>
+            <div class="slide">Slide 2: And here's the Second slide.</div>
+            <div class="slide">Slide 3: And here's the Third slide.</div>
+            <div class="slide">Slide 4: And here's the fourth slide.</div>
+            <div class="nav-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+    </div>
+    <script src="slider.js"></script>
+</body>
+</html>

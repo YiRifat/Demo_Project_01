@@ -1,0 +1,737 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+:root{
+    --text-color: #174859;
+    --title-color: #FF715A;
+    --button-color: #FFFFFF;
+    --background-color: #E1E1E1;
+}
+html{
+    font-size: 62.5%;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: var(--background-color);
+}
+/* ------------------------ */
+/* Reusable Component {Start} */
+/* ------------------------ */
+section{
+    width: 100%;
+}
+.container{
+    max-width: 144rem;
+    margin: 0 auto;
+    padding: 0 8rem;
+    overflow: hidden;
+}
+h1,
+h2,
+h3,
+h4{
+    color: var(--title-color);
+    font-style: italic;
+    text-transform: uppercase;
+}
+h1{
+    font-family: "League Gothic", sans-serif;
+    font-size: 11.25rem;
+    font-weight: 500;
+}
+h2{
+    font-family: "League Gothic", sans-serif;
+    font-size: 6.5rem;
+    font-weight: 500;
+    
+}
+h3{
+    font-size: 2.5rem;
+}
+h4{
+    font-size: 2.1rem;
+}
+p{
+    color: var(--text-color);
+}
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--button-color);
+    font-weight: 900;
+}
+li{
+    list-style: none;
+}
+.btn{
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 2rem;
+    background-color: var(--title-color);
+    border-radius: 1rem;
+}
+
+/* ------------------------ */
+/* Reusable Component {End} */
+/* ------------------------ */
+
+
+/* ------------------------ */
+/* Navbar {Start} */
+/* ------------------------ */
+header{
+    padding-top: 5rem;
+}
+nav{
+    display: flex;
+    align-items: center;
+}
+header nav ul{
+    width: 100rem;
+}
+nav .logo{
+    width: 10rem;
+    margin-right: 5rem;
+}
+nav .logo img{
+    width: 100%;
+}
+nav ul{
+    display: flex;
+    gap: 3rem;
+}
+nav ul li a{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+ }
+nav .searchBox{
+    margin-left: 25%;
+    display: flex;
+    background-color: #46CCD9;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+}
+nav .searchBox input{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: #fff;
+}
+nav .searchBox input:focus{
+    border-bottom: .1rem solid #fff;
+}
+nav .searchBox a{
+    font-size: 2rem;
+}
+nav .menuBtn{
+    display: none;
+    font-size: 2.5rem;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3.5rem;
+    text-align: center;
+    border-radius: .5rem;
+    background-color: var(--text-color);
+}
+/*  */
+/*  */
+/*  */
+nav .menuBox{
+    position: fixed;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    background:rgba(0, 0, 0, 0.75);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms;
+}
+nav .menuBox.active{
+    right: 0;
+    left: 0;
+    height: 100%;
+    transition: 300ms;
+}
+nav .menuBox .closeBtn.active{
+    position: absolute;
+    top: 5rem;
+    right: 10rem;
+    z-index: 999;
+    border: .2rem solid #FF715A;
+    border-radius: .5rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 3rem;
+}
+nav .menuBox .closeBtn a{
+    font-size: 3rem;
+    color: #FF715A;
+}
+nav .menuBox ul{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+nav .menuBox ul li a{
+    font-size: 3rem;
+    color: #FF715A;
+    font-weight: 900;
+    z-index: 1000;
+    padding: 1rem 5rem;
+}
+nav .menuBox ul li a:hover{
+    background-color: #FF715A;
+    color: #fff;
+    border-radius: 1rem;
+    transition-duration: 300ms;
+}
+
+/* ------------------------ */
+/* Navbar {End} */
+/* ------------------------ */
+
+
+/* ------------------------ */
+/* Section 01 {Start} */
+/* ------------------------ */
+.section01{
+    position: relative;
+    width: 100%;
+    height: 110rem;
+}
+.section01 .container{
+    background-image: url(Images/bg-1.png);
+    background-position: top center ;
+    background-repeat: no-repeat;
+    height: 100%;
+    max-width: 144rem;
+    position: relative;
+}
+.section01 .container::before{
+    content: "";
+    width: 25rem;
+    height: 25rem;
+    position: absolute;
+    top: -12.5rem;
+    right: 20rem;
+    background-image: url(Images/dots.png);
+    background-repeat: no-repeat;
+}
+.section01 .container::after{
+    content: "";
+    width: 40rem;
+    height: 50rem;
+    position: absolute;
+    right: 0;
+    bottom: -5rem;
+    background-image: url(Images/curve\ 1.png);
+    background-repeat: no-repeat;
+}
+.section01 .home{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 30%;
+    padding-top: 5rem;
+}
+.section01 .home h1{
+    margin: 2rem 0;
+}
+.section01 .home h3{
+    color: var(--text-color);
+    font-weight: 400;
+    width: 90%;
+    margin-bottom: 3rem;
+}
+.section01 .home a{
+    font-size: 2.9rem;
+}
+
+/* ------------------------ */
+/* Section 01 {End} */
+/* ------------------------ */
+
+
+/* ------------------------ */
+/* Section 02 {Start} */
+/* ------------------------ */
+.section02{
+    margin-top: 10rem;
+    width: 100%;
+    height: 70rem;
+}
+.section02 .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section02 .container h2{
+    color: var(--text-color);
+}
+.section02 .container h4{
+    color: var(--text-color);
+    font-weight: 400;
+
+}
+.section02 .boxes{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5rem 0;
+}
+.section02 .box{
+    display: flex;
+    flex-direction: column;
+}
+.section02 .box img{
+    width: 15rem;
+    height: 15rem;
+    margin-bottom: 10rem;
+    align-self: center;
+}
+.section02 .box h4{
+    color: var(--title-color);
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+.section02 .box p{
+    color: var(--text-color);
+    font-size: 2rem;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+
+}
+
+/* ------------------------ */
+/* Section 02 {End} */
+/* ------------------------ */
+
+
+/* ------------------------ */
+/* Section 03 {Start} */
+/* ------------------------ */
+.section03{
+    width: 100%;
+    height: 150rem;
+}
+.section03 .container{
+    height: 100%;
+    text-align: center;
+    background-image: url(Images/bg-3.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+    padding-top: 20rem;
+}
+.section03 .colum{
+    float: right;
+    margin-top: 10rem;
+    height: 80rem;
+}
+.section03 .colum .box{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10rem;
+    position: relative;
+}
+.section03 .colum .box1::before{
+    content: "";
+    position: absolute;
+    top: -5rem;
+    right: -19rem;
+    width: 50rem;
+    height: 50rem;
+    background-image: url(Images/curve\ 1.png);
+    background-repeat: no-repeat;
+}
+.section03 .colum .box2::before{
+    content: "";
+    position: absolute;
+    top: -8rem;
+    left: -20rem;
+    width: 50rem;
+    height: 50rem;
+    background-image: url(Images/curve\ 2.png);
+    background-repeat: no-repeat;
+}
+.section03 .colum .box3::before{
+    content: "";
+    position: absolute;
+    top: -5rem;
+    right: -19rem;
+    width: 50rem;
+    height: 50rem;
+    background-image: url(Images/curve\ 1.png);
+    background-repeat: no-repeat;
+}
+.section03 .colum .box .col{
+    width: 50%;
+}
+.section03 .colum .box .col p,
+.section03 .colum .box a{
+    font-size: 2rem;
+}
+.section03 .colum .box a{
+    float: left;
+    margin: 0 2rem;
+    position: relative;
+    background-color: var(--title-color);
+    padding: 1.4rem;
+    border-radius: .5rem;
+}
+
+.section03 .colum .box .col h4,
+.section03 .colum .box .col p{
+    text-align: left;
+}
+.section03 .colum .box .col h4{
+    margin-bottom: 2rem;
+    font-weight: 900;
+}
+.section03 .colum .box .col p{
+    width: 80%;   
+}
+
+
+/* ------------------------ */
+/* Section 03 {End} */
+/* ------------------------ */
+
+
+
+/* ------------------------ */
+/* Section 04 {Start} */
+/* ------------------------ */
+.section04{
+    width: 100%;
+    height: 96.5rem;
+}
+.section04 .container{
+    position: relative;
+    max-width: 144rem;    
+    height: 100%;
+    background-image: url(Images/bg-4.png);
+    background-repeat: no-repeat;
+}
+.section04 .container::after{
+    content: "";
+    width: 25rem;
+    height: 22rem;
+    position: absolute;
+    bottom: 0rem;
+    left: 20rem;
+    background-image: url(Images/dots.png);
+    background-repeat: no-repeat;
+}
+.slider .slide .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.slider .slide .box h2{
+    color: var(--background-color);
+    margin-bottom: 3rem;
+}
+.slider .slide .box p{
+    color: var(--text-color);
+    font-size: 2rem;
+    width: 62.5%;
+    text-align: center;
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 5rem;
+}
+.slider .slide .box span{
+    font-size: 1.5rem;
+    color: var(--background-color);
+    text-transform: capitalize;
+    font-weight: 600;
+
+}
+
+/* ------------------------ */
+/* Section 04 {End} */
+/* ------------------------ */
+
+/* ------------------------ */
+/* Section 05 {Start} */
+/* ------------------------ */
+.section05{
+    width: 100%;
+    height: 85rem;
+}
+.section05 .container{
+    height: 100%;
+    text-align: center;
+}
+.section05 h4{
+    color: var(--text-color);
+    font-weight: 500;
+    margin-bottom: 7.5rem;
+}
+.section05 .box{
+    display: flex;
+}
+.section05 .box .card{
+    padding: 3.5rem;
+}
+.section05 .box .card img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 5rem;
+}
+.section05 .box .card h4{
+    color: var(--title-color);
+    margin-bottom: 2rem;
+}
+.section05 .box .card h4 span{
+    font-weight: 900;
+}
+.section05 .box .card p{
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* ------------------------ */
+/* Section 05 {End} */
+/* ------------------------ */
+
+
+/* ------------------------ */
+/* Section 06 {Start} */
+/* ------------------------ */
+.section06{
+    width: 100%;
+    height: 150rem;
+}
+.section06 .container{
+    height: 100%;
+    width: 100%;
+    max-width: 144rem;
+    background-image: url(Images/bg-6.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 10rem;
+}
+
+.section06 .container .box{
+    padding: 0 6.5rem;
+}
+.section06 .container .box h2{
+    margin-bottom: 5rem;
+}
+.section06 .container .box p{
+    font-size: 2rem;
+    font-weight: 500;
+    font-style: italic;
+    text-transform: uppercase;
+    width: 95%;
+
+}
+.section06 .container .box img{
+    width: 100%;
+    height: 100%;
+    margin: 5rem 0;
+}
+.section06 .container .box div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section06 .container .box div a.btn{
+    font-size: 2.5rem;
+}
+
+/* ------------------------ */
+/* Section 06 {End} */
+/* ------------------------ */
+
+/* ------------------------ */
+/* Section 07 {Start} */
+/* ------------------------ */
+.section07{
+    width: 100%;
+    height: 70rem;
+}
+.section07 .container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section07 h2{
+    margin-bottom: 2rem;
+}
+.section07 h4{
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 6rem;
+}
+.section07 .container .box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 84%;
+    border: .3rem solid var(--title-color);
+    border-radius: 1rem;
+    padding: 10rem 5rem;
+}
+.section07 .container .box::before{
+    content: "";
+    position: absolute;
+    background-image: url(Images/curve\ 1.png);
+    background-repeat: no-repeat;
+    width: 65rem;
+    height: 50rem;
+    bottom: -30rem;
+    left: -2rem;
+    z-index: -1;
+    
+}
+.section07 .container .box input{
+    width: 75%;
+    height: 5rem;
+    font-size: 2.5rem;
+    border: none;
+    border-radius: 10rem;
+    outline: none;
+    padding: 3rem;
+    margin-bottom: 4rem;
+}
+.section07 .container .box a.btn{
+    font-size: 2.5rem;
+    transition: 300ms;
+}
+.section07 .container .box a.btn:hover{
+    font-size: 3.5rem;
+    padding: 2.5rem;
+    box-shadow: .5rem .5rem 2rem 1.5rem #a7a7a7;
+}
+
+/* ------------------------ */
+/* Section 07 {End} */
+/* ------------------------ */
+
+
+/* ------------------------ */
+/* Section 08 {Start} */
+/* ------------------------ */
+.section08{
+    width: 100%;
+    height: 80rem;
+}
+.section08 .container{
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30rem;
+}
+.section08 .container::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(Images/bg-8.png);
+    background-repeat: no-repeat;
+    background-position: center ;
+    z-index: -2;
+}
+.section08 h2,
+.section08 h3,
+.section08 p,
+.section08 li,
+.section08 a{
+    color: var(--button-color);
+}
+.section08 .box h2,
+.section08 .box h3{
+    margin-bottom: 3rem;
+}
+.section08 .box h3{
+    font-size: 4rem;
+}
+.section08 .box p{
+    font-size: 2.5rem;
+}
+.section08 .box ul li,
+.section08 .box a{
+    font-size: 2rem;
+}
+.section08 .box ul li{
+    margin-bottom: 1rem;
+}
+.section08 .box3{
+    width: 25%;
+}
+.section08 .box3 .icons ul{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+}
+.section08 .box3 .icons ul li{
+    width: 3rem;
+    height: 3rem;
+    line-height: 3.5rem;
+    background-color: var(--button-color);
+    border-radius: 50%;
+    text-align: center;
+    transition: 300ms;
+}
+.section08 .box3 .icons ul li:hover{
+    width: 4rem;
+    height: 4rem;
+    line-height: 4.5rem;
+    transform: translateX(360deg);
+}
+.section08 .box3 .icons ul li a{
+    color: var(--title-color);
+    transition: 250ms;
+}
+.section08 .box3 .icons ul li:hover a{
+    font-size: 2.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------ */
+/* Section 08 {End} */
+/* ------------------------ */
+
